@@ -89,6 +89,10 @@ namespace ChessPieces.Models
         {
             return (Math.Abs(RowIndex - cell.RowIndex) < 2) && (Math.Abs(ColumnIndex - cell.ColumnIndex) < 2) && !this.Equals(cell);
         }
+        public bool WithinKnightReach(Cell cell)
+        {
+            return Math.Abs(RowIndex - cell.RowIndex) + Math.Abs(ColumnIndex - cell.ColumnIndex) == 3;
+        }
         public override bool Equals(object? obj)
         {
             if (obj is Cell cell)
