@@ -44,5 +44,16 @@ namespace ChessPieces.Models
                 _ => throw new ArgumentException()
             };
         }
+        public bool CanReach(Cell cell)
+        {
+            foreach (Cell reachable in ReachableCells)
+            {
+                if (reachable.Equals(cell))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
