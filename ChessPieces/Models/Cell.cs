@@ -73,5 +73,32 @@ namespace ChessPieces.Models
             return row >= 0 && row < 8 && 
                    column >= 0 && column < 8;
         }
+        public bool InSameRow(Cell cell)
+        {
+            return RowIndex == cell.RowIndex;
+        }
+        public bool InSameColumn(Cell cell)
+        {
+            return ColumnIndex == cell.ColumnIndex;
+        }
+        public bool OnSameDiagonal(Cell cell)
+        {
+            return Math.Abs(ColumnIndex - cell.ColumnIndex) == Math.Abs(RowIndex - cell.RowIndex);
+        }
+        public bool IsNeighbour(Cell cell)
+        {
+            return (Math.Abs(RowIndex - cell.RowIndex) < 2) && (Math.Abs(ColumnIndex - cell.ColumnIndex) < 2) && !this.Equals(cell);
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj is Cell cell)
+            {
+                return RowIndex == cell.RowIndex && ColumnIndex == cell.ColumnIndex;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
