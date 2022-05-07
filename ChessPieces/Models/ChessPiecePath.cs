@@ -50,18 +50,18 @@ namespace ChessPieces.Models
         }
         private void AddDiagonal(Cell firstCell, Cell secondCell)
         {
-            Cell leftCell = firstCell.RowIndex > secondCell.RowIndex ? firstCell : secondCell;
+            Cell leftCell = firstCell.RowIndex < secondCell.RowIndex ? firstCell : secondCell;
             Cell rightCell = leftCell.Equals(firstCell) ? secondCell : firstCell;
             if (leftCell.ColumnIndex < rightCell.ColumnIndex)
             {
-                for (int i = leftCell.RowIndex, j = leftCell.ColumnIndex + 1; i < rightCell.RowIndex; i++, j++)
+                for (int i = leftCell.RowIndex + 1, j = leftCell.ColumnIndex + 1; i < rightCell.RowIndex; i++, j++)
                 {
                     Path.Add(new Cell(i, j));
                 }
             }
             else
             {
-                for (int i = leftCell.RowIndex, j = leftCell.ColumnIndex + 1; i < rightCell.RowIndex; i++, j--)
+                for (int i = leftCell.RowIndex + 1, j = leftCell.ColumnIndex + 1; i < rightCell.RowIndex; i++, j--)
                 {
                     Path.Add(new Cell(i, j));
                 }
