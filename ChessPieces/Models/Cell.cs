@@ -68,5 +68,10 @@ namespace ChessPieces.Models
         {
             return RowToString() + ColumnToString();
         }
+        static bool IsValid(int row, int column)
+        {
+            return row >= 0 && row < 8 && 
+                   column >= 0 && column < 8;
+        }
     }
 }
