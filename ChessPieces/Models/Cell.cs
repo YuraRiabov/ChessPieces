@@ -91,7 +91,7 @@ namespace ChessPieces.Models
         }
         public bool WithinKnightReach(Cell cell)
         {
-            return Math.Abs(RowIndex - cell.RowIndex) + Math.Abs(ColumnIndex - cell.ColumnIndex) == 3 && !InSameColumn(cell) && !InSameColumn(cell);
+            return Math.Abs(RowIndex - cell.RowIndex) + Math.Abs(ColumnIndex - cell.ColumnIndex) == 3 && !InSameRow(cell) && !InSameColumn(cell);
         }
         public override bool Equals(object? obj)
         {
