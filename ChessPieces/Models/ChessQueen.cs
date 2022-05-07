@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ChessPieces.Models
 {
-    internal class ChessBishop : ChessPiece
+    internal class ChessQueen : ChessPiece
     {
-        public ChessBishop(Cell cell) : base(cell) {}
+        public ChessQueen(Cell cell) : base(cell) {}
 
         protected override bool IsReachable(Cell cell)
         {
-            return Location.OnSameDiagonal(cell);
+            return Location.InSameRow(cell) || Location.InSameColumn(cell) || Location.OnSameDiagonal(cell);
         }
     }
 }

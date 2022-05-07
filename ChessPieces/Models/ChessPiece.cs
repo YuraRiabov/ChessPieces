@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChessPieces.Enums;
 
 namespace ChessPieces.Models
 {
@@ -26,5 +27,22 @@ namespace ChessPieces.Models
             }
         }
         protected abstract bool IsReachable(Cell cell);
+        public ChessPiece(Cell cell)
+        {
+            Location = cell;
+            CalculateReachableCells();
+        }
+        public static ChessPiece ChessPieceFactoryMethod(ChessPieceTypeEnum type, Cell cell)
+        {
+            return type switch
+            {
+                ChessPieceTypeEnum.King => new ChessKing(cell),
+                ChessPieceTypeEnum.Queen => new ChessQueen(cell),
+                ChessPieceTypeEnum.Rook => new ChessRook(cell),
+                ChessPieceTypeEnum.Bishop => new ChessBishop(cell),
+                ChessPieceTypeEnum.Knight => new ChessKnight(cell),
+                _ => throw new ArgumentException()
+            };
+        }
     }
 }
