@@ -75,15 +75,15 @@ namespace ChessPieces.Models
         }
         public bool InSameRow(Cell cell)
         {
-            return RowIndex == cell.RowIndex;
+            return RowIndex == cell.RowIndex && !this.Equals(cell);
         }
         public bool InSameColumn(Cell cell)
         {
-            return ColumnIndex == cell.ColumnIndex;
+            return ColumnIndex == cell.ColumnIndex && !this.Equals(cell);
         }
         public bool OnSameDiagonal(Cell cell)
         {
-            return Math.Abs(ColumnIndex - cell.ColumnIndex) == Math.Abs(RowIndex - cell.RowIndex);
+            return Math.Abs(ColumnIndex - cell.ColumnIndex) == Math.Abs(RowIndex - cell.RowIndex) && !this.Equals(cell);
         }
         public bool IsNeighbour(Cell cell)
         {
@@ -91,7 +91,7 @@ namespace ChessPieces.Models
         }
         public bool WithinKnightReach(Cell cell)
         {
-            return Math.Abs(RowIndex - cell.RowIndex) + Math.Abs(ColumnIndex - cell.ColumnIndex) == 3;
+            return Math.Abs(RowIndex - cell.RowIndex) + Math.Abs(ColumnIndex - cell.ColumnIndex) == 3 && !InSameColumn(cell) && !InSameColumn(cell);
         }
         public override bool Equals(object? obj)
         {
