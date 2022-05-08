@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ChessPieces.ViewModels;
 
 namespace ChessPieces
 {
@@ -20,6 +21,7 @@ namespace ChessPieces
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MainWindowViewModel ViewModel { get; set; } = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
