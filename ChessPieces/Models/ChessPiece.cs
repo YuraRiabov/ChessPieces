@@ -55,5 +55,11 @@ namespace ChessPieces.Models
             }
             return false;
         }
+        public override string ToString()
+        {
+            string fullType = this.GetType().Name;
+            string shortType = fullType.Split(".")[2];
+            return $"{shortType} at {Location.ToString()}";
+        }
     }
 }
