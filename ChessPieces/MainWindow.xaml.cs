@@ -31,13 +31,28 @@ namespace ChessPieces
         }
         private void AddPieceImages()
         {
+            ClearPictures();
             foreach((ChessPieceTypeEnum type, int row, int column) piece in ViewModel.Pieces)
             {
                 BitmapImage image = GetImageByType(piece.type);
                 int gridRow = 8 - piece.row;
                 int gridColumn = piece.column + 1;
-                BoardGrid.Children.Cast<StackPanel>().First(x => Grid.GetRow(x) == gridRow && Grid.GetColumn(x) == gridColumn).Children.Cast<Image>().ToList()[0].Source = image;
+                SetImage(gridRow, gridColumn, image);
             }
+        }
+        private void ClearPictures()
+        {
+            for (int i = 1; i <= 8; i++)
+            {
+                for (int j = 1; j <= 8; j++)
+                {
+                    SetImage(i, j, null);
+                }
+            }
+        }
+        private void SetImage(int row, int column, BitmapImage? image)
+        {
+            BoardGrid.Children.Cast<StackPanel>().First(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column).Children.Cast<Image>().ToList()[0].Source = image;
         }
         private BitmapImage GetImageByType(ChessPieceTypeEnum type)
         {

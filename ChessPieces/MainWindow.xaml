@@ -296,9 +296,14 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5, 20, 10, 0">
                 <Label Content="Enter a piece to delete:" FontSize ="20"/>
-                <TextBox FontSize="20"/>
+                <TextBox x:Name="DeletePieceTextBox" FontSize="20"/>
                 <Button Content="Delete" Height="25" Width="60" Margin="0, 5, 0, 0"
-                        FontSize="18" HorizontalAlignment="Left"/>
+                        FontSize="18" HorizontalAlignment="Left"
+                        Command="{Binding Path=DataContext.DeletePieceCommand,
+                                  RelativeSource={RelativeSource Mode=FindAncestor,
+                                  AncestorType={x:Type Window}}}"
+                        CommandParameter="{Binding ElementName=DeletePieceTextBox,
+                                            Path=Text}"/>
             </StackPanel>
             <ScrollViewer Grid.Row="2" 
                           VerticalScrollBarVisibility="Auto"

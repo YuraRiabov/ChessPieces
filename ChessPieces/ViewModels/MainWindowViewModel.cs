@@ -14,9 +14,11 @@ namespace ChessPieces.ViewModels
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         private readonly RelayCommand<string> _addPieceCommand = null;
+        private readonly RelayCommand<string> _deletePieceCommand = null;
         private string _captures;
         private ChessBoard _chessBoard;
         public RelayCommand<string> AddPieceCommand => _addPieceCommand ?? new RelayCommand<string>(AddPiece, CanAddPiece);
+        public RelayCommand<string> DeletePieceCommand => _deletePieceCommand ?? new RelayCommand<string>(DeletePiece, CanDeletePiece);
         public string Captures
         {
             get => _captures;
@@ -55,7 +57,19 @@ namespace ChessPieces.ViewModels
             Pieces.Add(piece);
             _chessBoard.AddPiece(piece);
             UpdateCaptures();
-            PiecesChanged.Invoke();
+            PiecesChanged?.Invoke();
+        }
+        public bool CanDeletePiece(string cellString)
+        {
+            return DataConverter.StringToCell(cellString, out Cell cell) && Pieces.Count > 0 && !_chessBoard.CanAddPiece((cell.RowIndex, cell.ColumnIndex));
+        }
+        public void DeletePiece(string cellString)
+        {
+            DataConverter.StringToCell(cellString, out Cell cell);
+            Pieces.RemoveAll(x => cell.Equals(new Cell(x.Item2, x.Item3)));
+            _chessBoard.RemoveAt(cell.RowIndex, cell.ColumnIndex);
+            UpdateCaptures();
+            PiecesChanged?.Invoke();
         }
         public void OnProperyChanged(string propertyName = "")
         {
