@@ -5,8 +5,302 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChessPieces"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="BoardGrid" Grid.Column="0" Margin="5, 5, 5, 5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <Label Content="a" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2">
+                <Label Content="b" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="3">
+                <Label Content="c" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="4">
+                <Label Content="d" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="5">
+                <Label Content="e" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="6">
+                <Label Content="f" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="7">
+                <Label Content="g" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="8">
+                <Label Content="h" FontSize="18" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="8" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="7" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="6" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="5" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="4" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="3" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="2" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="0" Margin="0, 10, 0, 0">
+                <Label Content="1" FontSize="18" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="3" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="4" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="5" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="6" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="7" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="8" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="3" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="4" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="5" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="6" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="7" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="8" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="1" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="2" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="3" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="4" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="5" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="6" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="7" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="8" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="1" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="2" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="3" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="4" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="5" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="6" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="7" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="8" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
 
+            <StackPanel Grid.Row="5" Grid.Column="1" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="2" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="3" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="4" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="5" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="6" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="7" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="8" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="1" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="2" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="3" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="4" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="5" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="6" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="7" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="8" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="1" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="2" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="3" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="4" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="5" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="6" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="7" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="7" Grid.Column="8" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="1" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="2" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="3" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="4" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="5" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="6" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="7" Background="SaddleBrown">
+                <Image/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Grid.Column="8" Background="SandyBrown">
+                <Image/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical" Margin="5, 20, 10, 0">
+                <Label Content="Enter a piece to add:" FontSize ="20"/>
+                <TextBox FontSize="20"/>
+                <Button Content="Add" Height="25" Width="40" Margin="0, 5, 0, 0"
+                        FontSize="18" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5, 20, 10, 0">
+                <Label Content="Enter a piece to delete:" FontSize ="20"/>
+                <TextBox FontSize="20"/>
+                <Button Content="Delete" Height="25" Width="60" Margin="0, 5, 0, 0"
+                        FontSize="18" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <ScrollViewer Grid.Row="2" 
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto"
+                          Margin="0, 10, 10, 10">
+                <TextBlock x:Name="CapturesTextBox"
+                       Text="Possible captures:" FontSize="20"/>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>
