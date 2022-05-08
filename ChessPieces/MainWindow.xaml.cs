@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ChessPieces.ViewModels;
 using ChessPieces.Enums;
+using Microsoft.Win32;
 
 namespace ChessPieces
 {
@@ -22,9 +23,14 @@ namespace ChessPieces
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindowViewModel ViewModel { get; set; } = new MainWindowViewModel();
+        public MainWindowViewModel ViewModel { get; set; }
+        private string _welcomeMessage = "Welcome to Chess Pieces!\nHere you can load a chess position from a file(from 1 to 10 pieces in format \"king 0 0\") and see all possible captures.\n" +
+            " In addition you can add pieces(in initial input format of by actual coordinates \"Ka1\") or delete them(by coordinates in either input format without specifying piece type).\n" +
+            "To get started select a file containing initial position";
         public MainWindow()
         {
+            MessageBox.Show(_welcomeMessage, "Chess Pieces");
+            ViewModel = new MainWindowViewModel(GetPositionFromFile());
             InitializeComponent();
             AddPieceImages();
             ViewModel.PiecesChanged += AddPieceImages;
@@ -49,6 +55,16 @@ namespace ChessPieces
                     SetImage(i, j, null);
                 }
             }
+        }
+        private List<(ChessPieceTypeEnum, int, int)> GetPositionFromFile()
+        {
+            List<(ChessPieceTypeEnum, int, int)> position = new List<(ChessPieceTypeEnum, int, int)>();
+            OpenFileDialog openDialog = new OpenFileDialog { Filter = "Text files |*.txt" };
+            if (true == openDialog.ShowDialog())
+            {
+                position = DataConverter.GetPiecesFromFile(openDialog.FileName);
+            }
+            return position;
         }
         private void SetImage(int row, int column, BitmapImage? image)
         {

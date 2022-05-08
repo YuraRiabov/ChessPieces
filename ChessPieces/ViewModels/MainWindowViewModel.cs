@@ -29,9 +29,9 @@ namespace ChessPieces.ViewModels
             }
         }
         public List<(ChessPieceTypeEnum, int, int)> Pieces { get; set; } = new List<(ChessPieceTypeEnum, int, int)>();
-        public MainWindowViewModel()
+        public MainWindowViewModel(List<(ChessPieceTypeEnum, int, int)> pieces)
         {
-            _chessBoard = new ChessBoard(new List<(ChessPieceTypeEnum, int, int)>());
+            _chessBoard = new ChessBoard(pieces);
             UpdateCaptures();
             PiecesToTuple();
         }

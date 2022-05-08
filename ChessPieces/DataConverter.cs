@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,27 @@ namespace ChessPieces
             }
             cell = new Cell(0, 0);
             return false;
+        }
+        public static List<(ChessPieceTypeEnum type, int row, int column)> GetPiecesFromFile(string fileName)
+        {
+            List<(ChessPieceTypeEnum type, int row, int column)> pieces = new List<(ChessPieceTypeEnum type, int row, int column)> ();
+            List<string> lines = new List<string>();
+            using (StreamReader sr = new StreamReader(fileName))
+            {
+                string? line;
+                while((line = sr.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+            }
+            foreach (string line in lines)
+            {
+                if (StringToPiece(line, out (ChessPieceTypeEnum type, int row, int column) piece))
+                {
+                    pieces.Add(piece);
+                }
+            }
+            return pieces;
         }
         public static string CapturesToString(Dictionary<ChessPiece, List<ChessPiece>> captures)
         {
