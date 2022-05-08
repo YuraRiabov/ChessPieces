@@ -45,9 +45,9 @@ namespace ChessPieces.Models
             RowIndex = row;
             ColumnIndex = column;
         }
-        public string RowToString()
+        public string ColumnToString()
         {
-            return RowIndex switch
+            return ColumnIndex switch
             {
                 0 => "a",
                 1 => "b",
@@ -60,13 +60,13 @@ namespace ChessPieces.Models
                 _ => ""
             };
         }
-        public string ColumnToString()
+        public string RowToString()
         {
-            return (8 - ColumnIndex).ToString();
+            return (RowIndex + 1).ToString();
         }
         public override string ToString()
         {
-            return RowToString() + ColumnToString();
+            return ColumnToString() + RowToString();
         }
         public static bool IsValid(int row, int column)
         {
