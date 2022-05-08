@@ -41,6 +41,37 @@ namespace ChessPieces
             piece = (ChessPieceTypeEnum.King, 0, 0);
             return false;
         }
+        public static bool StringToCell(string line, out Cell cell)
+        {
+            if (line == null)
+            {
+                cell = new Cell(0, 0);
+                return false;
+            }
+            List<string> members;
+            if (line.Length == 2)
+            {
+                int column = (int)line[0] - 97;
+                if (int.TryParse(line.Substring(1, 1), out int row) &&
+                    Cell.IsValid(--row, column))
+                {
+                    cell = new Cell(row, column);
+                    return true;
+                }
+            }
+            else if ((members = line.Split(" ").ToList()).Count == 2)
+            {
+                if (int.TryParse(members[0], out int row) &&
+                    int.TryParse(members[1], out int column) &&
+                    Cell.IsValid(row, column))
+                {
+                    cell = new Cell(row, column);
+                    return true;
+                }
+            }
+            cell = new Cell(0, 0);
+            return false;
+        }
         public static string CapturesToString(Dictionary<ChessPiece, List<ChessPiece>> captures)
         {
             string capturesString = "";
