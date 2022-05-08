@@ -20,10 +20,10 @@ namespace ChessPieces
             List<string> members;
             if (line.Length == 3)
             {
-                if (TryParsePieceType(line[0].ToString(), out piece.type) && 
-                    int.TryParse(line[1].ToString(), out piece.row) &&
-                    int.TryParse(line[2].ToString(), out piece.column) &&
-                    Cell.IsValid(piece.row, piece.column))
+                piece.column = (int)line[1] - 97;
+                if (TryParsePieceType(line[0].ToString(), out piece.type) &&
+                    int.TryParse(line[2].ToString(), out piece.row) &&
+                    Cell.IsValid(--piece.row, piece.column))
                 {
                     return true;
                 }
