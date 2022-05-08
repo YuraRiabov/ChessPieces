@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ChessPieces.ViewModels;
+using ChessPieces.Enums;
 
 namespace ChessPieces
 {
@@ -25,6 +26,33 @@ namespace ChessPieces
         public MainWindow()
         {
             InitializeComponent();
+            AddPieceImages();
+            ViewModel.PiecesChanged += AddPieceImages;
+        }
+        private void AddPieceImages()
+        {
+            foreach((ChessPieceTypeEnum type, int row, int column) piece in ViewModel.Pieces)
+            {
+                BitmapImage image = GetImageByType(piece.type);
+                int gridRow = 8 - piece.row;
+                int gridColumn = piece.column + 1;
+                BoardGrid.Children.Cast<StackPanel>().First(x => Grid.GetRow(x) == gridRow && Grid.GetColumn(x) == gridColumn).Children.Cast<Image>().ToList()[0].Source = image;
+            }
+        }
+        private BitmapImage GetImageByType(ChessPieceTypeEnum type)
+        {
+            string fileName = type switch
+            {
+                ChessPieceTypeEnum.King => "King.png",
+                ChessPieceTypeEnum.Queen => "Queen.png",
+                ChessPieceTypeEnum.Rook => "Rook.png",
+                ChessPieceTypeEnum.Bishop => "Bishop.png",
+                ChessPieceTypeEnum.Knight => "Knight.png",
+                _ => throw new ArgumentException()
+            };
+            string path = Environment.CurrentDirectory;
+            BitmapImage image = new BitmapImage(new Uri($@"{path}\PieceImages\{fileName}"));
+            return image;
         }
     }
 }
