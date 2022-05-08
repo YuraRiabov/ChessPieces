@@ -55,6 +55,18 @@ namespace ChessPieces.Models
             }
             return false;
         }
+        public ChessPieceTypeEnum GetPieceType()
+        {
+            return this switch
+            {
+                ChessKing => ChessPieceTypeEnum.King,
+                ChessQueen => ChessPieceTypeEnum.Queen,
+                ChessRook => ChessPieceTypeEnum.Rook,
+                ChessBishop => ChessPieceTypeEnum.Bishop,
+                ChessKnight => ChessPieceTypeEnum.Knight,
+                _ => throw new ArgumentException()
+            };
+        }
         public override string ToString()
         {
             string type = this.GetType().Name;

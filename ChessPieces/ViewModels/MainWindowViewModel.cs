@@ -41,15 +41,7 @@ namespace ChessPieces.ViewModels
         {
             foreach(ChessPiece piece in _chessBoard.Pieces)
             {
-                ChessPieceTypeEnum type = piece switch
-                {
-                    ChessKing => ChessPieceTypeEnum.King,
-                    ChessRook => ChessPieceTypeEnum.Rook,
-                    ChessQueen => ChessPieceTypeEnum.Queen,
-                    ChessBishop => ChessPieceTypeEnum.Bishop,
-                    ChessKnight => ChessPieceTypeEnum.Knight,
-                    _ => throw new ArgumentException()
-                };
+                ChessPieceTypeEnum type = piece.GetPieceType();
                 Pieces.Add((type, piece.Location.RowIndex, piece.Location.ColumnIndex));
             }
         }
