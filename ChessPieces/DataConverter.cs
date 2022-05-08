@@ -12,6 +12,11 @@ namespace ChessPieces
     {
         public static bool StringToPiece(string line, out (ChessPieceTypeEnum type, int row, int column) piece)
         {
+            if (line == null)
+            {
+                piece = (ChessPieceTypeEnum.King, 0, 0);
+                return false;
+            }
             List<string> members;
             if (line.Length == 3)
             {
