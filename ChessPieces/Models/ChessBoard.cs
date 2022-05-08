@@ -47,17 +47,20 @@ namespace ChessPieces.Models
                 }
             }
         }
-        public bool AddPiece((ChessPieceTypeEnum type, int row, int column) piece)
+        public bool CanAddPiece((int row, int column) coordinates)
         {
-            ChessPiece chessPiece = ChessPiece.ChessPieceFactoryMethod(piece.type, new Cell(piece.row, piece.column));
-            if (!Pieces.Where(x => x.Location.Equals(chessPiece.Location)).Any())
+            if (!Pieces.Where(x => x.Location.Equals(new Cell(coordinates.row, coordinates.column))).Any())
             {
-                Pieces.Add(chessPiece);
-                Captures.Clear();
-                CalculateCaptures();
                 return true;
             }
             return false;
+        }
+        public void AddPiece((ChessPieceTypeEnum type, int row, int column) piece)
+        {
+            ChessPiece chessPiece = ChessPiece.ChessPieceFactoryMethod(piece.type, new Cell(piece.row, piece.column));
+            Pieces.Add(chessPiece);
+            Captures.Clear();
+            CalculateCaptures();
         }
         public bool RemoveAt(int row, int column)
         {
