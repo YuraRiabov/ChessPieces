@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChessPieces.Enums
 {
-    internal enum ChessPieceTypeEnum
+    public enum ChessPieceTypeEnum
     {
         King,
         Queen,
