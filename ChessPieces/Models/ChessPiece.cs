@@ -57,9 +57,9 @@ namespace ChessPieces.Models
         }
         public override string ToString()
         {
-            string fullType = this.GetType().Name;
-            string shortType = fullType.Split(".")[2];
-            return $"{shortType} at {Location.ToString()}";
+            string type = this.GetType().Name;
+            type = type.Replace("Chess", "");
+            return $"{type} at {Location.ToString()}";
         }
     }
 }

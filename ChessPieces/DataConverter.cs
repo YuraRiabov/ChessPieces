@@ -48,8 +48,8 @@ namespace ChessPieces
                     {
                         capturesString += $"{capture.ToString().ToLower()}, ";
                     }
-                    capturesString.TrimEnd();
-                    capturesString.TrimEnd(',');
+                    capturesString = capturesString.TrimEnd();
+                    capturesString = capturesString.TrimEnd(',');
                     capturesString += "\n";
                 }
             }
