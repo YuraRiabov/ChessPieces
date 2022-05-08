@@ -62,7 +62,7 @@ namespace ChessPieces.Models
         }
         public string ColumnToString()
         {
-            return (ColumnIndex + 1).ToString();
+            return (8 - ColumnIndex).ToString();
         }
         public override string ToString()
         {
