@@ -19,7 +19,7 @@ namespace ChessPieces.Models
                 _location = value;
                 CalculateReachableCells();
             }
-    }
+        }
         public List<Cell> ReachableCells { get; protected set; }
         protected void CalculateReachableCells()
         {
@@ -37,7 +37,8 @@ namespace ChessPieces.Models
             }
         }
         protected abstract bool IsReachable(Cell cell);
-        public ChessPiece(Cell cell)
+
+        protected ChessPiece(Cell cell)
         {
             Location = cell;
             CalculateReachableCells();
@@ -56,14 +57,7 @@ namespace ChessPieces.Models
         }
         public bool CanReach(Cell cell)
         {
-            foreach (Cell reachable in ReachableCells)
-            {
-                if (reachable.Equals(cell))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return IsReachable(cell);
         }
         public ChessPieceTypeEnum GetPieceType()
         {
