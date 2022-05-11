@@ -14,44 +14,44 @@ namespace ChessPieces.Models
             ConstructPath(piece.Location, cell);
         }
 
-        private void ConstructPath(Cell firstCell, Cell secondCell)
+        private void ConstructPath(Cell from, Cell to)
         {
             Path = new List<Cell>();
-            if (firstCell.InSameRow(secondCell))
+            if (from.InSameRow(to))
             {
-                AddRow(firstCell, secondCell);
+                AddRow(from, to);
             }
-            else if (firstCell.InSameColumn(secondCell))
+            else if (from.InSameColumn(to))
             {
-                AddColumn(firstCell, secondCell);
+                AddColumn(from, to);
             }
-            else if (firstCell.OnSameDiagonal(secondCell))
+            else if (from.OnSameDiagonal(to))
             {
-                AddDiagonal(firstCell, secondCell);
+                AddDiagonal(from, to);
             }
         }
-        private void AddRow(Cell firstCell, Cell secondCell)
+        private void AddRow(Cell from, Cell to)
         {
-            int leftBoundary = Math.Min(firstCell.RowIndex, secondCell.RowIndex);
-            int rightBoundary = Math.Max(firstCell.RowIndex, secondCell.RowIndex);
+            int leftBoundary = Math.Min(from.RowIndex, to.RowIndex);
+            int rightBoundary = Math.Max(from.RowIndex, to.RowIndex);
             for (int i = leftBoundary + 1; i < rightBoundary; i++)
             {
-                Path.Add(new Cell(i, firstCell.ColumnIndex));
+                Path.Add(new Cell(i, from.ColumnIndex));
             }
         }
-        private void AddColumn(Cell firstCell, Cell secondCell)
+        private void AddColumn(Cell from, Cell to)
         {
-            int bottomBoundary = Math.Min(firstCell.ColumnIndex, secondCell.ColumnIndex);
-            int topBoundary = Math.Max(firstCell.ColumnIndex, secondCell.ColumnIndex);
+            int bottomBoundary = Math.Min(from.ColumnIndex, to.ColumnIndex);
+            int topBoundary = Math.Max(from.ColumnIndex, to.ColumnIndex);
             for (int i = bottomBoundary + 1; i < topBoundary; i++)
             {
-                Path.Add(new Cell(firstCell.RowIndex, i));
+                Path.Add(new Cell(from.RowIndex, i));
             }
         }
-        private void AddDiagonal(Cell firstCell, Cell secondCell)
+        private void AddDiagonal(Cell from, Cell to)
         {
-            Cell leftCell = firstCell.RowIndex < secondCell.RowIndex ? firstCell : secondCell;
-            Cell rightCell = leftCell.Equals(firstCell) ? secondCell : firstCell;
+            Cell leftCell = from.RowIndex < to.RowIndex ? from : to;
+            Cell rightCell = leftCell.Equals(from) ? to : from;
             if (leftCell.ColumnIndex < rightCell.ColumnIndex)
             {
                 for (int i = leftCell.RowIndex + 1, j = leftCell.ColumnIndex + 1; i < rightCell.RowIndex; i++, j++)
