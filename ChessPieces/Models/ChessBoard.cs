@@ -9,8 +9,8 @@ namespace ChessPieces.Models
 {
     internal class ChessBoard
     {
-        public List<ChessPiece> Pieces { get; set; }
-        public Dictionary<ChessPiece, List<ChessPiece>> Captures { get; set; }
+        public List<ChessPiece> Pieces { get; private set; }
+        public Dictionary<ChessPiece, List<ChessPiece>> Captures { get; private set; }
         public ChessBoard(List<(ChessPieceTypeEnum, int, int)> pieces)
         {
             Pieces = new List<ChessPiece>();
