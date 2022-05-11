@@ -9,7 +9,17 @@ namespace ChessPieces.Models
 {
     internal abstract class ChessPiece
     {
-        public Cell Location { get; set; }
+        private Cell _location;
+
+        public Cell Location
+        {
+            get => _location;
+            set
+            {
+                _location = value;
+                CalculateReachableCells();
+            }
+    }
         public List<Cell> ReachableCells { get; protected set; }
         protected void CalculateReachableCells()
         {
