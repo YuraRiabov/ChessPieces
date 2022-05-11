@@ -45,7 +45,7 @@ namespace ChessPieces.Models
             RowIndex = row;
             ColumnIndex = column;
         }
-        public string ColumnToString()
+        private string ColumnToString()
         {
             return ColumnIndex switch
             {
@@ -60,7 +60,7 @@ namespace ChessPieces.Models
                 _ => ""
             };
         }
-        public string RowToString()
+        private string RowToString()
         {
             return (RowIndex + 1).ToString();
         }
