@@ -9,7 +9,7 @@ using ChessPieces.Models;
 
 namespace ChessPieces
 {
-    internal class DataConverter
+    internal static class DataConverter
     {
         public static bool StringToPiece(string line, out (ChessPieceTypeEnum type, int row, int column) piece)
         {
