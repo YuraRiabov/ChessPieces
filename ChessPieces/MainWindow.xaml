@@ -83,197 +83,261 @@
             <StackPanel Grid.Row="8" Grid.Column="0" Margin="0, 10, 0, 0">
                 <Label Content="1" FontSize="18" VerticalAlignment="Bottom"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="1" Background="SandyBrown">
+            <StackPanel Grid.Row="1" Grid.Column="1" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="2" Background="SaddleBrown">
+            <StackPanel Grid.Row="1" Grid.Column="2" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="3" Background="SandyBrown">
+            <StackPanel Grid.Row="1" Grid.Column="3" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="4" Background="SaddleBrown">
+            <StackPanel Grid.Row="1" Grid.Column="4" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="5" Background="SandyBrown">
+            <StackPanel Grid.Row="1" Grid.Column="5" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="6" Background="SaddleBrown">
+            <StackPanel Grid.Row="1" Grid.Column="6" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="7" Background="SandyBrown">
+            <StackPanel Grid.Row="1" Grid.Column="7" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="8" Background="SaddleBrown">
+            <StackPanel Grid.Row="1" Grid.Column="8" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="1" Background="SaddleBrown">
+            <StackPanel Grid.Row="2" Grid.Column="1" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="2" Background="SandyBrown">
+            <StackPanel Grid.Row="2" Grid.Column="2" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="3" Background="SaddleBrown">
+            <StackPanel Grid.Row="2" Grid.Column="3" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="4" Background="SandyBrown">
+            <StackPanel Grid.Row="2" Grid.Column="4" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="5" Background="SaddleBrown">
+            <StackPanel Grid.Row="2" Grid.Column="5" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="6" Background="SandyBrown">
+            <StackPanel Grid.Row="2" Grid.Column="6" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="7" Background="SaddleBrown">
+            <StackPanel Grid.Row="2" Grid.Column="7" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="8" Background="SandyBrown">
+            <StackPanel Grid.Row="2" Grid.Column="8" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="1" Background="SandyBrown">
+            <StackPanel Grid.Row="3" Grid.Column="1" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="2" Background="SaddleBrown">
+            <StackPanel Grid.Row="3" Grid.Column="2" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="3" Background="SandyBrown">
+            <StackPanel Grid.Row="3" Grid.Column="3" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="4" Background="SaddleBrown">
+            <StackPanel Grid.Row="3" Grid.Column="4" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="5" Background="SandyBrown">
+            <StackPanel Grid.Row="3" Grid.Column="5" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="6" Background="SaddleBrown">
+            <StackPanel Grid.Row="3" Grid.Column="6" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="7" Background="SandyBrown">
+            <StackPanel Grid.Row="3" Grid.Column="7" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="8" Background="SaddleBrown">
+            <StackPanel Grid.Row="3" Grid.Column="8" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="1" Background="SaddleBrown">
+            <StackPanel Grid.Row="4" Grid.Column="1" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="2" Background="SandyBrown">
+            <StackPanel Grid.Row="4" Grid.Column="2" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="3" Background="SaddleBrown">
+            <StackPanel Grid.Row="4" Grid.Column="3" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="4" Background="SandyBrown">
+            <StackPanel Grid.Row="4" Grid.Column="4" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="5" Background="SaddleBrown">
+            <StackPanel Grid.Row="4" Grid.Column="5" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="6" Background="SandyBrown">
+            <StackPanel Grid.Row="4" Grid.Column="6" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="7" Background="SaddleBrown">
+            <StackPanel Grid.Row="4" Grid.Column="7" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="8" Background="SandyBrown">
+            <StackPanel Grid.Row="4" Grid.Column="8" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
 
-            <StackPanel Grid.Row="5" Grid.Column="1" Background="SandyBrown">
+            <StackPanel Grid.Row="5" Grid.Column="1" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.Column="2" Background="SaddleBrown">
+            <StackPanel Grid.Row="5" Grid.Column="2" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.Column="3" Background="SandyBrown">
+            <StackPanel Grid.Row="5" Grid.Column="3" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.Column="4" Background="SaddleBrown">
+            <StackPanel Grid.Row="5" Grid.Column="4" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.Column="5" Background="SandyBrown">
+            <StackPanel Grid.Row="5" Grid.Column="5" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.Column="6" Background="SaddleBrown">
+            <StackPanel Grid.Row="5" Grid.Column="6" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.Column="7" Background="SandyBrown">
+            <StackPanel Grid.Row="5" Grid.Column="7" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.Column="8" Background="SaddleBrown">
+            <StackPanel Grid.Row="5" Grid.Column="8" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="1" Background="SaddleBrown">
+            <StackPanel Grid.Row="6" Grid.Column="1" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="2" Background="SandyBrown">
+            <StackPanel Grid.Row="6" Grid.Column="2" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="3" Background="SaddleBrown">
+            <StackPanel Grid.Row="6" Grid.Column="3" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="4" Background="SandyBrown">
+            <StackPanel Grid.Row="6" Grid.Column="4" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="5" Background="SaddleBrown">
+            <StackPanel Grid.Row="6" Grid.Column="5" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="6" Background="SandyBrown">
+            <StackPanel Grid.Row="6" Grid.Column="6" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="7" Background="SaddleBrown">
+            <StackPanel Grid.Row="6" Grid.Column="7" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="8" Background="SandyBrown">
+            <StackPanel Grid.Row="6" Grid.Column="8" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="1" Background="SandyBrown">
+            <StackPanel Grid.Row="7" Grid.Column="1" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="2" Background="SaddleBrown">
+            <StackPanel Grid.Row="7" Grid.Column="2" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="3" Background="SandyBrown">
+            <StackPanel Grid.Row="7" Grid.Column="3" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="4" Background="SaddleBrown">
+            <StackPanel Grid.Row="7" Grid.Column="4" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="5" Background="SandyBrown">
+            <StackPanel Grid.Row="7" Grid.Column="5" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="6" Background="SaddleBrown">
+            <StackPanel Grid.Row="7" Grid.Column="6" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="7" Background="SandyBrown">
+            <StackPanel Grid.Row="7" Grid.Column="7" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="7" Grid.Column="8" Background="SaddleBrown">
+            <StackPanel Grid.Row="7" Grid.Column="8" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="1" Background="SaddleBrown">
+            <StackPanel Grid.Row="8" Grid.Column="1" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="2" Background="SandyBrown">
+            <StackPanel Grid.Row="8" Grid.Column="2" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="3" Background="SaddleBrown">
+            <StackPanel Grid.Row="8" Grid.Column="3" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="4" Background="SandyBrown">
+            <StackPanel Grid.Row="8" Grid.Column="4" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="5" Background="SaddleBrown">
+            <StackPanel Grid.Row="8" Grid.Column="5" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="6" Background="SandyBrown">
+            <StackPanel Grid.Row="8" Grid.Column="6" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="7" Background="SaddleBrown">
+            <StackPanel Grid.Row="8" Grid.Column="7" Background="SaddleBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
-            <StackPanel Grid.Row="8" Grid.Column="8" Background="SandyBrown">
+            <StackPanel Grid.Row="8" Grid.Column="8" Background="SandyBrown"
+                        MouseEnter="Cell_OnMouseEnter" MouseLeave="Cell_OnMouseLeave">
                 <Image/>
             </StackPanel>
         </Grid>
