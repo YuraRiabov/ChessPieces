@@ -16,7 +16,7 @@ namespace ChessPieces.Models
             Pieces = new List<ChessPiece>();
             foreach ((ChessPieceTypeEnum type, int row, int column) piece in pieces)
             {
-                Pieces.Add(ChessPiece.ChessPieceFactoryMethod(piece.type, new Cell(piece.row, piece.column)));
+                Pieces.Add(ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column)));
             }
             Captures = new Dictionary<ChessPiece, List<ChessPiece>>();
             CalculateCaptures();
@@ -57,7 +57,7 @@ namespace ChessPieces.Models
         }
         public void AddPiece((ChessPieceTypeEnum type, int row, int column) piece)
         {
-            ChessPiece chessPiece = ChessPiece.ChessPieceFactoryMethod(piece.type, new Cell(piece.row, piece.column));
+            ChessPiece chessPiece = ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column));
             Pieces.Add(chessPiece);
             Captures.Clear();
             CalculateCaptures();

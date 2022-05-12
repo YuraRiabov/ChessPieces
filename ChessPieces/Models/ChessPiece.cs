@@ -43,7 +43,7 @@ namespace ChessPieces.Models
             Location = cell;
             CalculateReachableCells();
         }
-        public static ChessPiece ChessPieceFactoryMethod(ChessPieceTypeEnum type, Cell cell)
+        public static ChessPiece CreateChessPiece(ChessPieceTypeEnum type, Cell cell)
         {
             return type switch
             {
