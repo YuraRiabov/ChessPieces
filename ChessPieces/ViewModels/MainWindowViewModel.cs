@@ -8,6 +8,7 @@ using ChessPieces.Enums;
 using ChessPieces.Models;
 using ChessPieces.Commands;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace ChessPieces.ViewModels
 {
@@ -25,7 +26,7 @@ namespace ChessPieces.ViewModels
             set
             {
                 _captures = value;
-                OnProperyChanged(nameof(Captures));
+                OnPropertyChanged();
             }
         }
         public List<(ChessPieceTypeEnum, int, int)> Pieces { get; set; } = new List<(ChessPieceTypeEnum, int, int)>();
@@ -71,9 +72,19 @@ namespace ChessPieces.ViewModels
             UpdateCaptures();
             PiecesChanged?.Invoke();
         }
-        public void OnProperyChanged(string propertyName = "")
+        public void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(string.Empty));
+        }
+
+        public List<(int, int)> GetCapturable(int row, int column)
+        {
+            List<(int, int)> capturable = new List<(int, int)>();
+            foreach (Cell cell in _chessBoard.GetCapturableCells(row, column))
+            {
+                capturable.Add((8 - cell.RowIndex, cell.ColumnIndex + 1));
+            }
+            return capturable;
         }
         public delegate void PiecesChangedEventHandler();
         public event PiecesChangedEventHandler PiecesChanged;
