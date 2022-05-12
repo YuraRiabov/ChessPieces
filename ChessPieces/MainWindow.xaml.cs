@@ -25,17 +25,18 @@ namespace ChessPieces
     {
         public MainWindowViewModel ViewModel { get; set; }
         private string _welcomeMessage = "Welcome to Chess Pieces!\nHere you can load a chess position from a file(from 1 to 10 pieces in format \"king 0 0\") and see all possible captures.\n" +
-            " In addition you can add pieces(in initial input format of by actual coordinates \"Ka1\") or delete them(by coordinates in either input format without specifying piece type).\n" +
+            "In addition you can add pieces or delete them.\n" +
             "To get started select a file containing initial position";
         public MainWindow()
         {
             MessageBox.Show(_welcomeMessage, "Chess Pieces");
             ViewModel = new MainWindowViewModel(GetPositionFromFile());
             InitializeComponent();
-            AddPieceImages();
-            ViewModel.PiecesChanged += AddPieceImages;
+            SetDefaultBoardColours();
+            RefreshPieceImages();
+            ViewModel.PiecesChanged += RefreshPieceImages;
         }
-        private void AddPieceImages()
+        private void RefreshPieceImages()
         {
             ClearPictures();
             foreach((ChessPieceTypeEnum type, int row, int column) piece in ViewModel.Pieces)
@@ -68,8 +69,14 @@ namespace ChessPieces
         }
         private void SetImage(int row, int column, BitmapImage? image)
         {
-            BoardGrid.Children.Cast<StackPanel>().First(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column).Children.Cast<Image>().ToList()[0].Source = image;
+            BoardGrid.Children
+                .Cast<StackPanel>()
+                .First(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column)
+                .Children.Cast<Image>()
+                .ToList()[0]
+                .Source = image;
         }
+
         private BitmapImage GetImageByType(ChessPieceTypeEnum type)
         {
             string fileName = type switch
@@ -84,6 +91,52 @@ namespace ChessPieces
             string path = Environment.CurrentDirectory;
             BitmapImage image = new BitmapImage(new Uri($@"{path}\PieceImages\{fileName}"));
             return image;
+        }
+
+        private void Cell_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            int row = 8 - Grid.GetRow((UIElement)sender);
+            int column = Grid.GetColumn((UIElement)sender) - 1;
+            foreach ((int row, int column) capture in ViewModel.GetCapturable(row, column))
+            {
+                SetCellColour(capture.row, capture.column, Brushes.Red);
+            }
+            
+        }
+
+        private void SetDefaultBoardColours()
+        {
+            for (int i = 1; i < 9; i++)
+            {
+                for (int j = 1; j < 9; j++)
+                {
+                    SetCellColour(i, j, GetDefaultCellColour(i, j));
+                }
+            }
+        }
+
+        private Brush GetDefaultCellColour(int row, int column)
+        {
+            if ((row + column) % 2 == 0)
+            {
+                return Brushes.SandyBrown;
+            }
+            else
+            {
+                return Brushes.SaddleBrown;
+            }
+        }
+        private void SetCellColour(int row, int column, Brush brush)
+        {
+            BoardGrid.Children
+                .Cast<StackPanel>()
+                .First(x => Grid.GetRow(x) == row && Grid.GetColumn(x) == column)
+                .Background = brush;
+        }
+
+        private void Cell_OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            SetDefaultBoardColours();
         }
     }
 }
