@@ -32,27 +32,27 @@ namespace ChessPieces.Models
         }
         private void AddRow(Cell from, Cell to)
         {
-            int leftBoundary = Math.Min(from.RowIndex, to.RowIndex);
-            int rightBoundary = Math.Max(from.RowIndex, to.RowIndex);
+            int leftBoundary = Math.Min(from.ColumnIndex, to.ColumnIndex);
+            int rightBoundary = Math.Max(from.ColumnIndex, to.ColumnIndex);
             for (int i = leftBoundary + 1; i < rightBoundary; i++)
-            {
-                Path.Add(new Cell(i, from.ColumnIndex));
-            }
-        }
-        private void AddColumn(Cell from, Cell to)
-        {
-            int bottomBoundary = Math.Min(from.ColumnIndex, to.ColumnIndex);
-            int topBoundary = Math.Max(from.ColumnIndex, to.ColumnIndex);
-            for (int i = bottomBoundary + 1; i < topBoundary; i++)
             {
                 Path.Add(new Cell(from.RowIndex, i));
             }
         }
+        private void AddColumn(Cell from, Cell to)
+        {
+            int bottomBoundary = Math.Min(from.RowIndex, to.RowIndex);
+            int topBoundary = Math.Max(from.RowIndex, to.RowIndex);
+            for (int i = bottomBoundary + 1; i < topBoundary; i++)
+            {
+                Path.Add(new Cell(i, from.ColumnIndex));
+            }
+        }
         private void AddDiagonal(Cell from, Cell to)
         {
-            Cell leftCell = from.RowIndex < to.RowIndex ? from : to;
+            Cell leftCell = from.ColumnIndex < to.ColumnIndex ? from : to;
             Cell rightCell = leftCell.Equals(from) ? to : from;
-            if (leftCell.ColumnIndex < rightCell.ColumnIndex)
+            if (leftCell.RowIndex < rightCell.RowIndex)
             {
                 for (int i = leftCell.RowIndex + 1, j = leftCell.ColumnIndex + 1; i < rightCell.RowIndex; i++, j++)
                 {
@@ -61,7 +61,7 @@ namespace ChessPieces.Models
             }
             else
             {
-                for (int i = leftCell.RowIndex + 1, j = leftCell.ColumnIndex + 1; i < rightCell.RowIndex; i++, j--)
+                for (int i = leftCell.RowIndex - 1, j = leftCell.ColumnIndex + 1; i > rightCell.RowIndex; i--, j++)
                 {
                     Path.Add(new Cell(i, j));
                 }
