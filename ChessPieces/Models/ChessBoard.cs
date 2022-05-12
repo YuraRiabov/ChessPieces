@@ -18,11 +18,11 @@ namespace ChessPieces.Models
             {
                 Pieces.Add(ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column)));
             }
-            Captures = new Dictionary<ChessPiece, List<ChessPiece>>();
             CalculateCaptures();
         }
         private void CalculateCaptures()
         {
+            Captures = new Dictionary<ChessPiece, List<ChessPiece>>();
             foreach (ChessPiece currentPiece in Pieces)
             {
                 Captures.Add(currentPiece, new List<ChessPiece>());
@@ -49,17 +49,12 @@ namespace ChessPieces.Models
         }
         public bool CanAddPiece((int row, int column) coordinates)
         {
-            if (!Pieces.Where(x => x.Location.Equals(new Cell(coordinates.row, coordinates.column))).Any())
-            {
-                return true;
-            }
-            return false;
+            return !Pieces.Any(x => x.Location.Equals(new Cell(coordinates.row, coordinates.column)));
         }
         public void AddPiece((ChessPieceTypeEnum type, int row, int column) piece)
         {
             ChessPiece chessPiece = ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column));
             Pieces.Add(chessPiece);
-            Captures.Clear();
             CalculateCaptures();
         }
         public bool RemoveAt(int row, int column)
@@ -73,6 +68,19 @@ namespace ChessPieces.Models
                 return true;
             }
             return false;
+        }
+
+        public List<Cell> GetCapturableCells(int row, int column)
+        {
+            ChessPiece? capturingPiece = Pieces.FirstOrDefault(x => x.Location.Equals(new Cell(row, column)));
+            if (capturingPiece == null)
+            {
+                return new List<Cell>();
+            }
+            else
+            {
+                return Captures[capturingPiece].Select(x => x.Location).ToList();
+            }
         }
     }
 }
