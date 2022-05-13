@@ -86,8 +86,7 @@ namespace ChessPieces.ViewModels
             }
             return capturable;
         }
-        public delegate void PiecesChangedEventHandler();
-        public event PiecesChangedEventHandler PiecesChanged;
+        public event Action PiecesChanged;
         public event PropertyChangedEventHandler? PropertyChanged;
 
     }
