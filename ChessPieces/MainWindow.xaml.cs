@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,12 +40,19 @@ namespace ChessPieces
         private void RefreshPieceImages()
         {
             ClearPictures();
-            foreach((ChessPieceTypeEnum type, int row, int column) piece in ViewModel.Pieces)
+            try
             {
-                BitmapImage image = GetImageByType(piece.type);
-                int gridRow = 8 - piece.row;
-                int gridColumn = piece.column + 1;
-                SetImage(gridRow, gridColumn, image);
+                foreach((ChessPieceTypeEnum type, int row, int column) piece in ViewModel.Pieces)
+                {
+                    BitmapImage image = GetImageByType(piece.type);
+                    int gridRow = 8 - piece.row;
+                    int gridColumn = piece.column + 1;
+                    SetImage(gridRow, gridColumn, image);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Image file couldn't be found");
             }
         }
         private void ClearPictures()
@@ -79,7 +87,24 @@ namespace ChessPieces
 
         private BitmapImage GetImageByType(ChessPieceTypeEnum type)
         {
-            string fileName = type switch
+            string fileName = GetImageFileName(type);
+            string fullPath;
+            if (File.Exists($@"PieceImages\{fileName}"))
+            {
+                fullPath = $@"PieceImages\{fileName}";
+            }
+            else
+            {
+                string directoryPath = Environment.CurrentDirectory.Replace(@"\bin\Debug\net6.0-windows", "");
+                fullPath = $@"{directoryPath}\PieceImages\{fileName}";
+            }
+            BitmapImage image = new BitmapImage(new Uri(fullPath));
+            return image;
+        }
+
+        private string GetImageFileName(ChessPieceTypeEnum type)
+        {
+            return type switch
             {
                 ChessPieceTypeEnum.King => "King.png",
                 ChessPieceTypeEnum.Queen => "Queen.png",
@@ -88,9 +113,6 @@ namespace ChessPieces
                 ChessPieceTypeEnum.Knight => "Knight.png",
                 _ => throw new ArgumentException()
             };
-            string path = Environment.CurrentDirectory;
-            BitmapImage image = new BitmapImage(new Uri($@"{path}\PieceImages\{fileName}"));
-            return image;
         }
 
         private void Cell_OnMouseEnter(object sender, MouseEventArgs e)
