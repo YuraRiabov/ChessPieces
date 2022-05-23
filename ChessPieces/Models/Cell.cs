@@ -104,5 +104,10 @@ namespace ChessPieces.Models
                 return false;
             }
         }
+
+        public bool Equals(int row, int column)
+        {
+            return row == RowIndex && column == ColumnIndex;
+        }
     }
 }

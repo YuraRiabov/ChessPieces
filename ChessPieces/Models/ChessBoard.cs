@@ -49,7 +49,7 @@ namespace ChessPieces.Models
         }
         public bool CanAddPiece((int row, int column) coordinates)
         {
-            return !Pieces.Any(x => x.Location.Equals(new Cell(coordinates.row, coordinates.column)));
+            return !Pieces.Any(x => x.Location.Equals(coordinates.row, coordinates.column));
         }
         public void AddPiece((ChessPieceTypeEnum type, int row, int column) piece)
         {

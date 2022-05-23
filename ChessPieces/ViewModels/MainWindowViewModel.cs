@@ -67,7 +67,7 @@ namespace ChessPieces.ViewModels
         public void DeletePiece(string cellString)
         {
             DataConverter.StringToCell(cellString, out Cell cell);
-            Pieces.RemoveAll(x => cell.Equals(new Cell(x.Item2, x.Item3)));
+            Pieces.RemoveAll(x => cell.Equals(x.Item2, x.Item3));
             _chessBoard.RemoveAt(cell.RowIndex, cell.ColumnIndex);
             UpdateCaptures();
             PiecesChanged?.Invoke();
