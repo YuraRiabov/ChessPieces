@@ -14,10 +14,10 @@ namespace ChessPieces.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private readonly RelayCommand<string> _addPieceCommand = null;
-        private readonly RelayCommand<string> _deletePieceCommand = null;
+        private readonly RelayCommand<string>? _addPieceCommand = null;
+        private readonly RelayCommand<string>? _deletePieceCommand = null;
         private string _captures;
-        private ChessBoard _chessBoard;
+        private readonly ChessBoard _chessBoard;
         public RelayCommand<string> AddPieceCommand => _addPieceCommand ?? new RelayCommand<string>(AddPiece, CanAddPiece);
         public RelayCommand<string> DeletePieceCommand => _deletePieceCommand ?? new RelayCommand<string>(DeletePiece, CanDeletePiece);
         public string Captures
@@ -29,7 +29,7 @@ namespace ChessPieces.ViewModels
                 OnPropertyChanged();
             }
         }
-        public List<(ChessPieceTypeEnum, int, int)> Pieces { get; set; } = new List<(ChessPieceTypeEnum, int, int)>();
+        public List<(ChessPieceTypeEnum, int, int)> Pieces { get; set; } = new();
         public MainWindowViewModel(List<(ChessPieceTypeEnum, int, int)> pieces)
         {
             _chessBoard = new ChessBoard(pieces);

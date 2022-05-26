@@ -16,7 +16,10 @@ namespace ChessPieces.Models
             Pieces = new List<ChessPiece>();
             foreach ((ChessPieceTypeEnum type, int row, int column) piece in pieces)
             {
-                Pieces.Add(ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column)));
+                if (CanAddPiece((piece.row, piece.column)))
+                {
+                    Pieces.Add(ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column)));
+                }
             }
             CalculateCaptures();
         }
@@ -53,14 +56,17 @@ namespace ChessPieces.Models
         }
         public void AddPiece((ChessPieceTypeEnum type, int row, int column) piece)
         {
-            ChessPiece chessPiece = ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column));
-            Pieces.Add(chessPiece);
-            CalculateCaptures();
+            if (CanAddPiece((piece.row, piece.column)))
+            {
+                ChessPiece chessPiece = ChessPiece.CreateChessPiece(piece.type, new Cell(piece.row, piece.column));
+                Pieces.Add(chessPiece);
+                CalculateCaptures();
+            }
         }
         public bool RemoveAt(int row, int column)
         {
             int previousCount = Pieces.Count;
-            Pieces.RemoveAll(x => x.Location.Equals(new Cell(row, column)));
+            Pieces.RemoveAll(x => x.Location.Equals(row, column));
             if (previousCount != Pieces.Count)
             {
                 Captures.Clear();
@@ -72,7 +78,7 @@ namespace ChessPieces.Models
 
         public List<Cell> GetCapturableCells(int row, int column)
         {
-            ChessPiece? capturingPiece = Pieces.FirstOrDefault(x => x.Location.Equals(new Cell(row, column)));
+            ChessPiece? capturingPiece = Pieces.FirstOrDefault(x => x.Location.Equals(row, column));
             if (capturingPiece == null)
             {
                 return new List<Cell>();

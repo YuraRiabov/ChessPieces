@@ -24,7 +24,7 @@ namespace ChessPieces
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindowViewModel ViewModel { get; set; }
+        public MainWindowViewModel ViewModel { get; private set; }
         private string _welcomeMessage = "Welcome to Chess Pieces!\nHere you can load a chess position from a file(from 1 to 10 pieces in format \"king 0 0\") and see all possible captures.\n" +
             "In addition you can add pieces or delete them.\n" +
             "To get started select a file containing initial position";
