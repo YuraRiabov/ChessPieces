@@ -7,4 +7,27 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="PieceImages\BIshop.png" />
+    <Resource Include="PieceImages\BIshop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="PieceImages\King.png" />
+    <Resource Include="PieceImages\King.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="PieceImages\Knight.png" />
+    <Resource Include="PieceImages\Knight.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="PieceImages\Queen.png" />
+    <Resource Include="PieceImages\Queen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="PieceImages\Rook.png" />
+    <Resource Include="PieceImages\Rook.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

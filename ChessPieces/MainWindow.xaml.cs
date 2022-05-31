@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -88,17 +89,10 @@ namespace ChessPieces
         private BitmapImage GetImageByType(ChessPieceTypeEnum type)
         {
             string fileName = GetImageFileName(type);
-            string fullPath;
-            if (File.Exists($@"PieceImages\{fileName}"))
-            {
-                fullPath = $@"PieceImages\{fileName}";
-            }
-            else
-            {
-                string directoryPath = Environment.CurrentDirectory.Replace(@"\bin\Debug\net6.0-windows", "");
-                fullPath = $@"{directoryPath}\PieceImages\{fileName}";
-            }
-            BitmapImage image = new BitmapImage(new Uri(fullPath));
+            BitmapImage image = new BitmapImage(new Uri(@"pack://application:,,,/" 
+                                                        + Assembly.GetExecutingAssembly().GetName().Name 
+                                                        + ";component/" 
+                                                        + $"PieceImages/{fileName}", UriKind.Absolute));
             return image;
         }
 
